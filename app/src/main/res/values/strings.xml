@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Always Tip</string>
+    <string name="price_label">Price</string>
+    <string name="price_hint">Price of meal/service</string>
+    <string name="percent_label"></string>
+    <string name="tip_label">Tip</string>
+    <string name="tip_amount">0</string>
+    <string name="total_label">Total</string>
+    <string name="total_amount">0</string>
+</resources>
