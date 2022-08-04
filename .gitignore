@@ -13,3 +13,5 @@
 .externalNativeBuild
 .cxx
 local.properties
+/app/src/androidTest/java/com/example/hiptips/
+/app/src/test/java/com/example/hiptips/

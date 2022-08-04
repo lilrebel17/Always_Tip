@@ -1,117 +1,294 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/primary"
+    tools:layout_editor_absoluteX="1dp"
+    tools:layout_editor_absoluteY="257dp">
 
-
-    <!-- Left Handed Labels -->
-    <TextView
-        android:id="@+id/tvPrice_Label"
-        android:layout_width="wrap_content"
-        android:layout_height="22dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="60dp"
-        android:fontFamily="monospace"
-        android:text="@string/price_label"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvTipPercent_Label"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="65dp"
-        android:fontFamily="monospace"
-        android:text="@string/percent_label"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/tvPrice_Label"
-        app:layout_constraintTop_toBottomOf="@+id/tvPrice_Label" />
+        android:isScrollContainer="true"
+        tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/tvTip_Label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:fontFamily="monospace"
-        android:text="@string/tip_label"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvTipPercent_Label"
-        app:layout_constraintTop_toBottomOf="@+id/tvTipPercent_Label" />
 
-    <TextView
-        android:id="@+id/tvTotal_Label"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:fontFamily="monospace"
-        android:text="@string/total_label"
-        android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvTip_Label"
-        app:layout_constraintTop_toBottomOf="@+id/tvTip_Label" />
+        <!-- Left Handed Labels -->
+        <View
+            android:id="@+id/DividerColorPrice"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/dividerInvisBetweenPricePercent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dividerInvisTopPercent" />
 
-    <!-- Right Handed Labels -->
+        <View
+            android:id="@+id/dividerInvisTopPercent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvPrice_Label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/tvPrice_Input"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:autofillHints=""
-        android:editable="true"
-        android:ems="10"
-        android:hint="@string/price_hint"
-        android:inputType="numberDecimal"
-        android:textColorHint="#78909C"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvPrice_Label"
-        app:layout_constraintStart_toEndOf="@+id/tvPrice_Label"
-        app:layout_constraintTop_toTopOf="@+id/tvPrice_Label" />
+        <View
+            android:id="@+id/dividerInvisBetweenTipTotal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvTotal_Label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTip_Label" />
 
-    <SeekBar
-        android:id="@+id/seekTipPercent_Slider"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="105dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tvTipPercent_Label"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvTipPercent_Label"
-        app:layout_constraintTop_toTopOf="@+id/tvTipPercent_Label" />
+        <View
+            android:id="@+id/dividerInvisBetweenTotalNone"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/qualityText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTotal_Label" />
 
-    <TextView
-        android:id="@+id/tvTip_Amount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvTip_Label"
-        app:layout_constraintStart_toEndOf="@+id/tvTip_Label"
-        app:layout_constraintTop_toTopOf="@+id/tvTip_Label"
-        tools:text="@string/tip_amount" />
+        <View
+            android:id="@+id/dividerInvisBetweenTipPercent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvTip_Label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTipPercent_Label" />
 
-    <TextView
-        android:id="@+id/tvTotal_Amount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvTotal_Label"
-        app:layout_constraintStart_toEndOf="@+id/tvTotal_Label"
-        app:layout_constraintTop_toTopOf="@+id/tvTotal_Label"
-        tools:text="@string/total_amount" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:id="@+id/dividerInvisBetweenPricePercent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/tvTipPercent_Label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvPrice_Label" />
+
+        <View
+            android:id="@+id/dividerColorPercent"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/dividerInvisBetweenTipPercent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dividerInvisBetweenPricePercent" />
+
+        <View
+            android:id="@+id/dividerColorTotal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/dividerInvisBetweenTotalNone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dividerInvisBetweenTipTotal" />
+
+        <View
+            android:id="@+id/dividerColorTip"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/dividerInvisBetweenTipTotal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dividerInvisBetweenTipPercent" />
+
+        <View
+            android:id="@+id/dividerColorQuality"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toTopOf="@+id/dividerInvisBottom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dividerInvisBetweenTotalNone" />
+
+        <View
+            android:id="@+id/dividerInvisBottom"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginEnd="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/qualityText" />
+
+        <TextView
+            android:id="@+id/tvPrice_Label"
+            android:layout_width="wrap_content"
+            android:layout_height="22dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="monospace"
+            android:text="@string/price_label"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/tvTipPercent_Label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:fontFamily="monospace"
+            android:text="@string/percent_label"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvPrice_Label"
+            app:layout_constraintTop_toBottomOf="@+id/tvPrice_Label"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/tvTip_Label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:fontFamily="monospace"
+            android:text="@string/tip_label"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvTipPercent_Label"
+            app:layout_constraintTop_toBottomOf="@+id/tvTipPercent_Label"
+            tools:ignore="TextContrastCheck" />
+
+        <!-- Right Handed Labels -->
+
+        <TextView
+            android:id="@+id/tvTotal_Label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:fontFamily="monospace"
+            android:text="@string/total_label"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/tvTip_Label"
+            app:layout_constraintTop_toBottomOf="@+id/tvTip_Label"
+            tools:ignore="TextContrastCheck" />
+
+        <EditText
+            android:id="@+id/tvPrice_Input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/price_hint"
+            android:inputType="numberDecimal"
+            android:textColorHint="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPrice_Label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tvPrice_Label"
+            app:layout_constraintTop_toTopOf="@+id/tvPrice_Label"
+            tools:ignore="TextContrastCheck,TextContrastCheck" />
+
+        <SeekBar
+            android:id="@+id/seekTipPercent_Slider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="70dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTipPercent_Label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvTipPercent_Label"
+            app:layout_constraintTop_toTopOf="@+id/tvTipPercent_Label" />
+
+        <TextView
+            android:id="@+id/tvTip_Amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTip_Label"
+            app:layout_constraintStart_toEndOf="@+id/tvTip_Label"
+            app:layout_constraintTop_toTopOf="@+id/tvTip_Label"
+            tools:ignore="TextContrastCheck,TextContrastCheck"
+            tools:text="@string/tip_amount" />
+
+        <TextView
+            android:id="@+id/tvTotal_Amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTotal_Label"
+            app:layout_constraintStart_toEndOf="@+id/tvTotal_Label"
+            app:layout_constraintTop_toTopOf="@+id/tvTotal_Label"
+            tools:ignore="TextContrastCheck"
+            tools:text="@string/total_amount" />
+
+        <TextView
+            android:id="@+id/qualityText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTotal_Label"
+            tools:ignore="TextContrastCheck"
+            tools:text="@string/qual_none" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

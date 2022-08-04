@@ -1,10 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="primary">#27ae60</color>
+    <color name="primary_variant">#2ecc71</color>
+
+    <color name="primary_night">#34495e</color>
+    <color name="primary_night_variant">#2c3e50</color>
+
+    <color name="secondary">#95a5a6</color>
+    <color name="secondary_variant">#7f8c8d</color>
+
+    <!-- Colors for Quality Text -->
+    <color name="qual_0">#ff0000</color>
+    <color name="qual_3">#FF2A00</color>
+    <color name="qual_5">#FF5500</color>
+    <color name="qual_7">#FF8000</color>
+    <color name="qual_9">#FFAA00</color>
+    <color name="qual_11">#FFD500</color>
+    <color name="qual_12">#FFFF00</color>
+    <color name="qual_13">#D4FF00</color>
+    <color name="qual_14">#AAFF00</color>
+    <color name="qual_15">#2BFF00</color>
+    <color name="qual_18">#26E600</color>
+    <color name="qual_25">#22CC00</color>
+    <color name="qual_30">#1E9500</color>
+    <color name="qual_40">#1A9900</color>
+    <color name="qual_50">#158000</color>
+    <color name="qual_70">#116600</color>
+    <color name="qual_90">#0D4D00</color>
 </resources>

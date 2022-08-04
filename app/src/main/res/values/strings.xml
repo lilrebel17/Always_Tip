@@ -1,10 +1,29 @@
 <resources>
     <string name="app_name">Always Tip</string>
+    <!-- Label Strings -->
     <string name="price_label">Price</string>
-    <string name="price_hint">Price of meal/service</string>
-    <string name="percent_label"></string>
-    <string name="tip_label">Tip</string>
+    <string name="percent_label">0%</string>
+    <string name="tip_label">Tip:</string>
+    <string name="total_label">Total:</string>
+
+    <!-- Strings for right side of labels that are dynamically updated -->
+    <string name="price_hint">Enter Meal Price</string>
+    <string name="percent_header">Tip Percent</string>
     <string name="tip_amount">0</string>
-    <string name="total_label">Total</string>
     <string name="total_amount">0</string>
+
+    <!-- Strings for Quality Text -->
+    <string name="qual_text">None</string>
+
+    <string name="qual_none">None</string>
+    <string name="qual_bad">Bad</string>
+    <string name="qual_bad_better">Getting Better</string>
+    <string name="qual_fine">Fine</string>
+    <string name="qual_average">Average</string>
+    <string name="qual_good_average">Above Average</string>
+    <string name="qual_good">Good</string>
+    <string name="qual_great">Great</string>
+    <string name="qual_fantastic">Fantastic</string>
+    <string name="qual_insane">Insane</string>
+    <string name="qual_wow">WOW</string>
 </resources>
